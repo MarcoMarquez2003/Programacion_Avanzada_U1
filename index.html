@@ -9,12 +9,12 @@
             background-color: gray;
         }
         canvas{
-            background-color: white;
+            background-color: rgb(0, 235, 252);
         }
     </style>
 </head>
 <body>
-    <canvas id="myCanvas" width="400" height="400"></canvas>
+    <canvas id="myCanvas" width="600" height="600"></canvas>
     <script type="text/javascript">
         const myCanvas=document.getElementById("myCanvas");
 
@@ -24,10 +24,47 @@
         ctx.fillRect(20,20,100,100)
 
         ctx.fillStyle="green";
-        ctx.fillRect(180,180,100,100)
+        ctx.fillRect(180,180,100,100) 
 
         ctx.fillStyle="blue";
-        ctx.fillRect(100,100,100,100)
+        ctx.fillRect(340,340,100,100)
+
+
+        ctx.strokeStyle="orange"
+        ctx.lineWidth=5;
+        ctx.strokeRect(100,100,100,100) 
+        
+        ctx.strokeStyle="purple"
+        ctx.lineWidth=5;
+        ctx.strokeRect(260,260,100,100) 
+
+        ctx.strokeStyle="yellow"
+        ctx.lineWidth=5;
+        ctx.strokeRect(420,420,100,100) 
+
+        ctx.beginPath()
+        ctx.moveTo(300,200)
+        ctx.lineTo(550,200)
+        ctx.lineTo(450,300)
+        ctx.closePath()
+        ctx.stroke()
+        ctx.fill()
+
+        ctx.beginPath()
+        ctx.moveTo(500,100)
+        ctx.lineTo(550,200)
+        ctx.lineTo(450,300)
+        ctx.closePath()
+        ctx.stroke()
+        ctx.fill()
+
+        ctx.beginPath()
+        ctx.moveTo(50,500)
+        ctx.lineTo(250,500)
+        ctx.lineTo(150,300)
+        ctx.closePath()
+        ctx.stroke()
+        ctx.fill()
     </script>
 </body>
 </html>
