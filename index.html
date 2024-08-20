@@ -106,6 +106,15 @@
 
         ctx.fillStyle = grd;
         ctx.fillRect(240, 70, 200, 100)
+
+        // Create Radial
+        const grd2 = ctx.createRadialGradient(75, 50, 5, 90, 60, 100);
+        grd2.addColorStop(0, "yellow");
+        grd2.addColorStop(1, "blue");
+
+        // Draw a filled Rectangle
+        ctx.fillStyle = grd2;
+        ctx.fillRect(10, 10, 125, 75);
     
     </script>
 </body>
