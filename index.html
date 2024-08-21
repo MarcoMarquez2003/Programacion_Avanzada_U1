@@ -1,32 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Canvas</title>
-    <style type="text/css">
-        body{
-            background-color: gray;
-        }
-        canvas{
-            background-color: rgb(0, 235, 252);
-        }
-    </style>
-</head>
-<body>
-    <canvas id="myCanvas" width="600" height="600"></canvas>
-    <script type="text/javascript">
-        const myCanvas=document.getElementById("myCanvas");
-
-        const ctx = myCanvas.getContext("2d");
-
-        document.getElementById("myCanvas").addEventListener("mousedown",function(e){
-            ctx.fillStyle="pink"
-            ctx.beginPath();
-            ctx.arc(e.x, e.y, 50, 0, 2 * Math.PI);
-            ctx.fill()
-        })
-
-    </script>
-</body>
-</html>
+<DOCTYPE html>
+    <html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Canvas</title>
+        <style type="text/css">
+            body {
+                background-color: gray;
+            }
+    
+            canvas {
+                background-color: rgb(0, 252, 210);
+            }
+        </style>
+    </head>
+    
+    <body>
+        <canvas id="myCanvas" width="600" height="600"></canvas>
+        <script type="text/javascript">
+            const canvas = document.getElementById("myCanvas");
+            const ctx = canvas.getContext("2d");
+    
+            function getRandomColor() {
+                const letters = '0123456789ABCDEF';
+                let color = '#';
+                for (let i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            }
+    
+           
+            canvas.addEventListener("mouseover", function (e) {
+                
+                const randomColor = getRandomColor();
+    
+                
+                ctx.fillStyle = randomColor;
+                ctx.strokeStyle = randomColor;
+    
+                
+                const rect = canvas.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+    
+                ctx.beginPath();
+                ctx.arc(x, y, 50, 0, 2 * Math.PI);
+                ctx.fill();
+                ctx.stroke();
+            });
+        </script>
+    </body>
+    
+    </html>
